@@ -1,14 +1,13 @@
-import _ from 'lodash'
 import './style.scss'
-import MyIcon from './assets/img/basketball.png'
-function component() {
-    var element = document.createElement('div')
-    // Lodash（目前通过一个 script 脚本引入）对于执行这一行是必需的
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-    element.classList.add('hello')
-    var myIcon = new Image()
-    myIcon.src = MyIcon
-    element.appendChild(myIcon)
-    return element
-}
-document.body.appendChild(component())
+import { createEle } from './print'
+import { header } from './header'
+document.body.appendChild(createEle())
+document.body.appendChild(header())
+
+// if (module.hot) {
+//     module.hot.accept('./print.js', function () {
+//         document.body.removeChild(element)
+//         element = createEle() // 重新渲染页面后，component 更新 click 事件处理
+//         document.body.appendChild(element)
+//     })
+// }

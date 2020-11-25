@@ -1,13 +1,11 @@
+import { cube } from './math.js'
 import _ from 'lodash'
-import './style.scss'
-const printMe = () => {
-    console.log('haha123')
+export const createEle = () => {
+    var element = document.createElement('button')
+    element.innerHTML = _.join(['webpack build'], cube(5))
+    element.onclick = () => {
+        console.log('this123')
+    }
+    element.classList.add('hello')
+    return element
 }
-
-function component() {
-    var btn = document.createElement('button')
-    btn.innerHTML = 'Click me and check the console!'
-    btn.onclick = printMe
-    return btn
-}
-document.body.appendChild(component())
