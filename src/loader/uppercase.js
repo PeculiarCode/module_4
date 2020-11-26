@@ -1,0 +1,11 @@
+module.exports = function (src) {
+    if (src) {
+        src = src.charAt(0).toUpperCase() + src.slice(1)
+        console.log('--- uppercase-loader output:', src, 22)
+
+        console.log(this, 778899)
+    }
+    // 这里为什么要这么写？因为直接返回转换后的字符串会报语法错误，
+    // 这么写import后转换成可以使用的字符串
+    return `${src}`
+}
