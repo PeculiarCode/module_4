@@ -255,12 +255,12 @@ module.exports = {
 ```js
 // 将编写的loader配置在生产环境
 // 执行命令npm run build观察控制台 
-// --- reverse-loader output: kcapbewolleh
-// --- uppercase-loader output: kcapbewolleh
+// --- reverse-loader output: redaol-kcapbew
+// --- uppercase-loader output: Redaol-kcapbew
 ```
 
--   模拟 plugin
+-   模拟 plugin生成filelist.md文件
     -   webpack 启动后,在读取配置的过程中会先执行 new MyPlugin(options) 初始化一个 MyPlugin 获得其实例
     -   在初始化 compiler 对象后,再调用 myPlugin.apply(compiler) 给插件实例传入 compiler 对象
     -   插件实例在获取到 compiler 对象后,就可以通过 compiler.plugin(事件名称, 回调函数) 监听到 Webpack 广播出来的事件
-    -   并且可以通过 compiler 对象去操作 webpack
+    -   可以通过 compiler 对象去操作 webpack

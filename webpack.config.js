@@ -49,17 +49,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 //load加载顺序是从下往上
-                use: ['style-loader','css-loader','sass-loader',
-                 /*    {
-                        loader: 'style-loader', // 将 JS 字符串生成为 style 节点
-                    },
-                    {
-                        loader: 'css-loader', // 将 CSS 转化成 CommonJS 模块
-                    },
-                    {
-                        loader: 'sass-loader', // 将 Sass 编译成 CSS
-                    }, */
-                ],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,

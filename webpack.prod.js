@@ -1,9 +1,12 @@
 const { merge } = require('webpack-merge')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const common = require('./webpack.common.js')
-const CssPathTransfor = require('./plugin/CssPathTransfor')
+const FileListPlugin = require('./plugin/fileListPlugin')
 module.exports = merge(common, {
-    plugins: [new UglifyJSPlugin(), new CssPathTransfor()],
+    entry: {
+        app: './src/production.js',
+    },
+    plugins: [new UglifyJSPlugin(), new FileListPlugin()],
     mode: 'production',
     resolveLoader: {
         modules: ['node_modules', './src/loader/'], // 配置加载本地loader
@@ -35,7 +38,7 @@ module.exports = merge(common, {
             },
             {
                 test: /\.txt$/,
-                use: ['uppercase?type=1', 'reverse'],
+                use: ['uppercase', 'reverse'],
             },
         ],
     },
